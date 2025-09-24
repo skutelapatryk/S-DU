@@ -1,0 +1,137 @@
+:root{
+    --bg-color: rgb(24,24,24);
+    --primary-color: rgb(130, 255, 153);
+    --secondary-color: rgb(168, 72, 237);
+}
+
+body{
+    background: var(--bg-color);
+    font-family: Roboto, sans-serif;
+}
+
+.viewport{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+}
+
+.title{
+    width: 100%;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+.title a{
+    font-size: 40px;
+    margin-left: 40px;
+    cursor: pointer;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    font-weight: 600;
+    color: rgb(160,160,160);
+    text-decoration: none;
+    transition: 200ms;
+}
+
+.title a:hover{
+    color: rgb(225,225,225);
+}
+
+.welcome-div{
+    width: 100%;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.welcome-div h1{
+    font-size: 46px;
+    color: transparent;
+    background-clip: text;
+    background-image: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+}
+
+.quizes-div{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.quizes-div h1{
+    color: rgb(235,235,235);
+    font-size: 36px;
+}
+
+.category-wrapper{
+    position: relative;
+    display: flex;
+    width: inherit;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.category-wrapper ul{
+    list-style: none;
+    padding: 0;
+    color: rgb(200,200,200);
+    background-color: transparent;
+    width: 80%;
+}
+
+.category-wrapper ul li{
+    margin-bottom: 4px;
+}
+
+.quiz-category-div{
+    position: relative;
+    width: 275px;
+    height: 275px;
+    background-color: rgb(32,32,32);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: 200ms;
+}
+
+.quiz-category-div::after{
+    content: "";
+    display: flex;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    background-image: linear-gradient(rgb(66,66,66));
+    padding: 1px 1px 1px 1px;
+    left: -1px;
+    bottom: -1px;
+    z-index: -1;
+    border-radius: inherit;
+    transition: 200ms;
+}
+
+.quiz-category-div:hover:after{
+    background-image: linear-gradient(var(--primary-color), var(--secondary-color));
+}
+
+.quiz-category-div:hover{
+    background-color: rgb(28,28,28);
+}
+
+.quiz-category-div h2{
+    color: white;
+}

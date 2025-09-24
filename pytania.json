@@ -1,0 +1,34 @@
+{
+    "kategoria":{
+        "matematyka":{
+            "arytmetyka": [
+
+            ],
+            "plaszyzna_kartezjanska":[
+
+            ],
+            "trygonometria":[
+
+            ]
+        },
+        "j_polski":{
+            "ortografia":[
+
+            ],
+            "lektury": [
+
+            ]
+        },
+        "programowanie": {
+            "Python": [
+
+            ],
+            "C++": [
+
+            ],
+            "JavaScript": [
+
+            ]
+        }
+    }
+}
