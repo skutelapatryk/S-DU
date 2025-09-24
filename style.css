@@ -48,7 +48,8 @@ body{
     width: 100%;
     background-color: transparent;
     display: flex;
-    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     align-items: center;
 }
 
@@ -57,6 +58,11 @@ body{
     color: transparent;
     background-clip: text;
     background-image: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+}
+
+.welcome-div h3{
+    font-size: 28px;
+    color: rgb(200,200,200);
 }
 
 .quizes-div{
@@ -134,4 +140,65 @@ body{
 
 .quiz-category-div h2{
     color: white;
+}
+
+.questions-categories-div{
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.category-div{
+    position: relative;
+    width: 400px;
+    background-color: rgb(32,32,32);
+    border-radius: 0.75rem;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    transition: 250ms;
+    text-decoration: none;
+}
+
+.category-div::after{
+    content: "";
+    display: flex;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    background-image: linear-gradient(rgb(66,66,66));
+    padding: 1px 1px 1px 1px;
+    left: -1px;
+    bottom: -1px;
+    z-index: -1;
+    border-radius: inherit;
+    transition: 200ms;
+}
+
+.category-div:hover:after{
+    background-image: linear-gradient(var(--primary-color), var(--secondary-color));
+}
+
+.category-div:hover{
+    background-color: rgb(28,28,28);
+}
+
+.category-div h3{
+    font-size: 20px;
+    color: white;
+    margin-left: 10px;
+    font-weight: 500;
+    margin-bottom: 10px;
+    margin-top: 12px;
+}
+
+.category-div p{
+    font-size: 14px;
+    color: white;
+    margin-left: 10px;
+    margin-top: 0;
 }
