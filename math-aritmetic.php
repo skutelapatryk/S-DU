@@ -17,21 +17,14 @@
         </div>
         <div class="welcome-div">
             <h1>Matematyka</h1>
-            <h3>Kategorie</h3>
+            <h3>Losuj pytania</h3>
         </div>
-        <div class="questions-categories-div">
-            <a class="category-div" href="math-aritmetic.php">
-                <h3>Arytmetyka</h3>
-                <p>30 pytań</p>
-            </a>
-            <a class="category-div" href="">
-                <h3>Płaszczyzna kartezjańska</h3>
-                <p>30 pytań</p>
-            </diav>
-            <a class="category-div" href="">
-                <h3>Trygonometria</h3>
-                <p>30 pytań</p>
-            </a>
+        <div class="questions-number-div">
+            <form action="index.php" method="post" class="questions-number-form">
+                <button type="submit" class="question-number-div" name="wybor" value=1>1 pytanie</button>
+                <button type="submit" class="question-number-div" name="wybor" value=5>5 pytań</button>
+                <button type="submit" class="question-number-div" name="wybor" value=10>10 pytań</button>
+            </form>
         </div>
     </div>
 </body>

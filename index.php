@@ -17,20 +17,21 @@
         </div>
         <div class="welcome-div">
             <h1>Matematyka</h1>
-            <h3>Kategorie</h3>
         </div>
-        <div class="questions-categories-div">
-            <a class="category-div" href="math-aritmetic.php">
-                <h3>Arytmetyka</h3>
-                <p>30 pytań</p>
-            </a>
-            <a class="category-div" href="">
-                <h3>Płaszczyzna kartezjańska</h3>
-                <p>30 pytań</p>
-            </diav>
-            <a class="category-div" href="">
-                <h3>Trygonometria</h3>
-                <p>30 pytań</p>
+        <div class="questions-number-div">
+            <a class="question-number-div" href="page2.php?varname=<?php echo $var_value ?>">
+                <h3>
+                    <?php
+                        $numberOfQuestions = $_POST["wybor"];
+                        if($numberOfQuestions == 1){
+                            echo "1";
+                        } else if($numberOfQuestions == 5){
+                            echo "5";
+                        } else if($numberOfQuestions == 10){
+                            echo "10";
+                        }
+                    ?>
+                </h3>
             </a>
         </div>
     </div>
