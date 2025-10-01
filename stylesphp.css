@@ -22,11 +22,15 @@ p{
     margin: 0;
 }
 input[type="radio"]{
-    appearance: true;
+    appearance: none;
 }
-
-label div input[type="radio"]:checked{
-    background-color: red;
+div:has(input[type="radio"]:checked){
+    color: var(--primary-color);
+}
+div:has(input[type="radio"]:checked)::after{
+    content: "";
+    position: absolute;
+    background-image: linear-gradient(var(--primary-color), var(--secondary-color));
 }
 
 div{
@@ -109,7 +113,7 @@ header{
 .title a:hover{
     color: rgb(225,225,225);
 }
-.submit{
+button{
     display: flex;
     text-align: center;
     justify-content: center;
@@ -119,4 +123,12 @@ header{
     padding-right: 20px;
     padding-top: 10px;
     padding-bottom: 10px;
+    background-image: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    border: none;
+    border-radius: 0.75rem;
+    font-weight: bold;
+}
+button:hover{
+   border: 2px solid white;
+   color: white;
 }

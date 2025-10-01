@@ -16,37 +16,43 @@
     <header>
         <h1 class="lgbttext">Powodzenia!</h1>
     </header>
-    <form action="index.php" method="post">
-    <?php 
-        $polaczenie = mysqli_connect('localhost', 'root', '', 'questions');
-        $zapytanie = ('select * from math_trigonometry');
-        $wynik = mysqli_query($polaczenie, $zapytanie);
-        $radio_name = 0;
-        $radio_id = 1;
-        while ($row = mysqli_fetch_assoc($wynik)){
-            $radio_number = 0;
-            $radio_option = 'opcja'.$radio_id;
-            echo '<p class="lgbttext2">'.$row['trigonometry'].'</p><br><br>';
-            echo '<label><div><input type="radio" id="'.$radio_option.'" value="'.$radio_number.'" name="'.$radio_name.'"> A. '.$row['answer_A'].'</div></label><br>';
-            $radio_number = $radio_number + 1;
-            $radio_id = $radio_id + 1;
-            $radio_option = 'opcja'.$radio_id;
-            echo '<label><div><input type="radio" id="'.$radio_option.'" value="'.$radio_number.'" name="'.$radio_name.'"> B. '.$row['answer_B'].'</div></label><br>';
-            $radio_number = $radio_number + 1;
-            $radio_id = $radio_id + 1;
-            $radio_option = 'opcja'.$radio_id;
-            echo '<label><div><input type="radio" id="'.$radio_option.'" value="'.$radio_number.'" name="'.$radio_name.'"> C. '.$row['answer_C'].'</div></label><br>';
-            $radio_number = $radio_number + 1;
-            $radio_id = $radio_id + 1;
-            $radio_option = 'opcja'.$radio_id;
-            echo '<label><div><input type="radio" id="'.$radio_option.'" value="'.$radio_number.'" name="'.$radio_name.'"> D. '.$row['answer_D'].'</div></label><br>';
-            echo '<br><br><hr><br><br>';
-            $radio_name = $radio_name + 1;
-            $radio_id = $radio_id + 1;
-        }
-        echo '<input type="submit" class="submit" value="Wyślij odpowiedzi!">';
-        mysqli_close($polaczenie);
-    ?>
+    <form action="index.php" method="$_REQUEST">
+        <?php 
+            $polaczenie = mysqli_connect('localhost', 'root', '', 'questions');
+            $polaczenie->set_charset("utf8mb4");
+            $zapytanie = ('select * from math_trigonometry');
+            $wynik = mysqli_query($polaczenie, $zapytanie);
+
+            $radio_name = 0;
+            $radio_id = 1;
+            if(isset($_POST["wybor"])){
+                    $chosenone = $_POST["wybor"];
+                };
+            for ($i=1; $i <= $chosenone; $i++){
+                    $row = mysqli_fetch_assoc($wynik);
+                    $radio_number = 0;
+                    $radio_option = 'opcja'.$radio_id;
+                    echo '<p class="lgbttext2">'.$row['trigonometry'].'</p><br><br>';
+                    echo '<label><div><input type="radio" id="'.$radio_option.'" value="'.$radio_number.'" name="'.$radio_name.'"> A. '.$row['answer_A'].'</div></label><br>';
+                    $radio_number = $radio_number + 1;
+                    $radio_id = $radio_id + 1;
+                    $radio_option = 'opcja'.$radio_id;
+                    echo '<label><div><input type="radio" id="'.$radio_option.'" value="'.$radio_number.'" name="'.$radio_name.'"> B. '.$row['answer_B'].'</div></label><br>';
+                    $radio_number = $radio_number + 1;
+                    $radio_id = $radio_id + 1;
+                    $radio_option = 'opcja'.$radio_id;
+                    echo '<label><div><input type="radio" id="'.$radio_option.'" value="'.$radio_number.'" name="'.$radio_name.'"> C. '.$row['answer_C'].'</div></label><br>';
+                    $radio_number = $radio_number + 1;
+                    $radio_id = $radio_id + 1;
+                    $radio_option = 'opcja'.$radio_id;
+                    echo '<label><div><input type="radio" id="'.$radio_option.'" value="'.$radio_number.'" name="'.$radio_name.'"> D. '.$row['answer_D'].'</div></label><br>';
+                    echo '<br><br><hr><br><br>';
+                    $radio_name = $radio_name + 1;
+                    $radio_id = $radio_id + 1;
+                };
+            echo '<button type="submit">Wyślij odpowiedzi!</button>';
+            mysqli_close($polaczenie);
+        ?>
     </form>
 </body>
 </html>

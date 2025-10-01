@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 22 Wrz 2025, 14:09
--- Wersja serwera: 10.4.27-MariaDB
--- Wersja PHP: 8.1.12
+-- Generation Time: Paź 01, 2025 at 10:19 AM
+-- Wersja serwera: 10.4.32-MariaDB
+-- Wersja PHP: 8.0.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Baza danych: `questions`
+-- Database: `questions`
 --
 
 -- --------------------------------------------------------
@@ -70,7 +70,7 @@ CREATE TABLE `math_trigonometry` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Zrzut danych tabeli `math_trigonometry`
+-- Dumping data for table `math_trigonometry`
 --
 
 INSERT INTO `math_trigonometry` (`id`, `trigonometry`, `answer_A`, `answer_B`, `answer_C`, `answer_D`, `answer_correct`) VALUES
@@ -103,23 +103,23 @@ ALTER TABLE `math_trigonometry`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT dla zrzuconych tabel
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT dla tabeli `math_arithmetic`
+-- AUTO_INCREMENT for table `math_arithmetic`
 --
 ALTER TABLE `math_arithmetic`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT dla tabeli `math_cartesian_plane`
+-- AUTO_INCREMENT for table `math_cartesian_plane`
 --
 ALTER TABLE `math_cartesian_plane`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT dla tabeli `math_trigonometry`
+-- AUTO_INCREMENT for table `math_trigonometry`
 --
 ALTER TABLE `math_trigonometry`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
