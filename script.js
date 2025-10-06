@@ -3,17 +3,17 @@ function redirect(url){
 }
 
 let mathDiv = document.querySelector("#mathDiv");
-let polishDiv = document.querySelector("#polishDiv");
+let geographyDiv = document.querySelector("#geographyDiv");
 let programmingDiv = document.querySelector("#programmingDiv");
 
 mathDiv.addEventListener("click", function test(){
-    window.location = "math-quiz.html";
+    window.location = "math-quiz.php";
 });
 
-polishDiv.addEventListener("click", function test(){
-    window.location = "polish-quiz.html";
+geographyDiv.addEventListener("click", function test(){
+    window.location = "geography-quiz.php";
 });
 
 programmingDiv.addEventListener("click", function test(){
-    window.location = "programming-quiz.html";
+    window.location = "programming-quiz.php";
 });

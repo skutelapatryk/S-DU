@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Paź 01, 2025 at 10:19 AM
+-- Generation Time: Wrz 24, 2025 at 10:12 AM
 -- Wersja serwera: 10.4.32-MariaDB
 -- Wersja PHP: 8.0.30
 
@@ -20,6 +20,32 @@ SET time_zone = "+00:00";
 --
 -- Database: `questions`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Struktura tabeli dla tabeli `geography_flags`
+--
+
+CREATE TABLE `geography_flags` (
+  `arithmetic` varchar(255) NOT NULL,
+  `answer_A` varchar(50) NOT NULL,
+  `answer_B` varchar(50) NOT NULL,
+  `answer_C` varchar(50) NOT NULL,
+  `answer_D` varchar(50) NOT NULL,
+  `answer_correct` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `geography_flags`
+--
+
+INSERT INTO `geography_flags` (`arithmetic`, `answer_A`, `answer_B`, `answer_C`, `answer_D`, `answer_correct`) VALUES
+('W jakim kraju zostało zrobione to zdjęcie?', 'Rosja', 'Ukraina ', 'Polska', 'Niemcy ', 'Rosja'),
+('W jakim kraju zostało zrobione to zdjęcie?', 'Rosja', 'Ukraina ', 'Polska', 'Niemcy ', 'Rosja'),
+('W jakim kraju zostało zrobione to zdjęcie?', 'Polska ', 'Niemcy', 'Rosja', 'Austria', 'Niemcy'),
+('W jakim kraju zostało zrobione to zdjęcie?', 'Meksyk', 'Kanada ', 'Stany Zjednoczone', 'Polska', 'Kanada'),
+('W jakim kraju zostało zrobione to zdjęcie?', 'Bhutan', 'Nepal', 'Indie', 'Polska', 'Indie');
 
 -- --------------------------------------------------------
 
