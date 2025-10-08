@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 06 Paź 2025, 14:07
--- Wersja serwera: 10.4.27-MariaDB
--- Wersja PHP: 8.1.12
+-- Generation Time: Paź 08, 2025 at 10:10 AM
+-- Wersja serwera: 10.4.32-MariaDB
+-- Wersja PHP: 8.0.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Baza danych: `questions`
+-- Database: `questions`
 --
 
 -- --------------------------------------------------------
@@ -28,7 +28,8 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `geography_flags` (
-  `arithmetic` varchar(255) NOT NULL,
+  `id` int(10) UNSIGNED NOT NULL,
+  `flags` varchar(255) NOT NULL,
   `answer_A` varchar(50) NOT NULL,
   `answer_B` varchar(50) NOT NULL,
   `answer_C` varchar(50) NOT NULL,
@@ -37,15 +38,15 @@ CREATE TABLE `geography_flags` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Zrzut danych tabeli `geography_flags`
+-- Dumping data for table `geography_flags`
 --
 
-INSERT INTO `geography_flags` (`arithmetic`, `answer_A`, `answer_B`, `answer_C`, `answer_D`, `answer_correct`) VALUES
-('W jakim kraju zostało zrobione to zdjęcie?', 'Rosja', 'Ukraina ', 'Polska', 'Niemcy ', 'Rosja'),
-('W jakim kraju zostało zrobione to zdjęcie?', 'Rosja', 'Ukraina ', 'Polska', 'Niemcy ', 'Rosja'),
-('W jakim kraju zostało zrobione to zdjęcie?', 'Polska ', 'Niemcy', 'Rosja', 'Austria', 'Niemcy'),
-('W jakim kraju zostało zrobione to zdjęcie?', 'Meksyk', 'Kanada ', 'Stany Zjednoczone', 'Polska', 'Kanada'),
-('W jakim kraju zostało zrobione to zdjęcie?', 'Bhutan', 'Nepal', 'Indie', 'Polska', 'Indie');
+INSERT INTO `geography_flags` (`id`, `flags`, `answer_A`, `answer_B`, `answer_C`, `answer_D`, `answer_correct`) VALUES
+(1, 'W jakim kraju zostało zrobione to zdjęcie?', 'Rosja', 'Ukraina ', 'Polska', 'Niemcy ', 'A'),
+(2, 'W jakim kraju zostało zrobione to zdjęcie?', 'Rosja', 'Ukraina ', 'Polska', 'Niemcy ', 'A'),
+(3, 'W jakim kraju zostało zrobione to zdjęcie?', 'Polska ', 'Niemcy', 'Rosja', 'Austria', 'B'),
+(4, 'W jakim kraju zostało zrobione to zdjęcie?', 'Meksyk', 'Kanada ', 'Stany Zjednoczone', 'Polska', 'B'),
+(5, 'W jakim kraju zostało zrobione to zdjęcie?', 'Bhutan', 'Nepal', 'Indie', 'Polska', 'C');
 
 -- --------------------------------------------------------
 
@@ -96,7 +97,7 @@ CREATE TABLE `math_trigonometry` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Zrzut danych tabeli `math_trigonometry`
+-- Dumping data for table `math_trigonometry`
 --
 
 INSERT INTO `math_trigonometry` (`id`, `trigonometry`, `answer_A`, `answer_B`, `answer_C`, `answer_D`, `answer_correct`) VALUES
@@ -109,6 +110,12 @@ INSERT INTO `math_trigonometry` (`id`, `trigonometry`, `answer_A`, `answer_B`, `
 --
 -- Indeksy dla zrzutów tabel
 --
+
+--
+-- Indeksy dla tabeli `geography_flags`
+--
+ALTER TABLE `geography_flags`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indeksy dla tabeli `math_arithmetic`
@@ -129,23 +136,29 @@ ALTER TABLE `math_trigonometry`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT dla zrzuconych tabel
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT dla tabeli `math_arithmetic`
+-- AUTO_INCREMENT for table `geography_flags`
+--
+ALTER TABLE `geography_flags`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `math_arithmetic`
 --
 ALTER TABLE `math_arithmetic`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT dla tabeli `math_cartesian_plane`
+-- AUTO_INCREMENT for table `math_cartesian_plane`
 --
 ALTER TABLE `math_cartesian_plane`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT dla tabeli `math_trigonometry`
+-- AUTO_INCREMENT for table `math_trigonometry`
 --
 ALTER TABLE `math_trigonometry`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
