@@ -1,18 +1,5 @@
 <?php
-    $lista = array(
-        "math_arithmetic" => "arithmetic",
-        "math_cartesian_plane" => "cartesian_plane",
-        "math_trigonometry" => "trigonometry",
-        "geography_flags" => "arithmetic",
-        "geography_localizations" => "localizations",
-        "geography_capitals" => "capitals",
-        "programming_python" => "python",
-        "programming_cpp" => "c++",
-        "programming_javascript" => "javascript",
-    );
-
     $categoryTable = $_POST["categoryTable"];
-    $questionNameFromTable = $lista[$categoryTable];
 ?>
 
 <!DOCTYPE html>
@@ -42,10 +29,10 @@
 
             $radio_name = 0;
             $radio_id = 1;
-            if(isset($_POST["wybor"])){
-                $chosenone = $_POST["wybor"];
-            };
-            echo "<input type='hidden' name='chosen'" . " value='" . $chosenone . "'>";
+            $location_number = 1;
+            $chosenone = $_POST["wybor"];
+            echo "<input type='hidden' name='chosen' value='".$chosenone."'>";
+            echo "<input type='hidden' name='chosenCategory' value='".$categoryTable."'>";
             for ($i=1; $i <= $chosenone; $i++){
                 $row = mysqli_fetch_assoc($wynik);
 
@@ -55,14 +42,18 @@
                 foreach ($answers as $ans) {
                     $radio_option = 'opcja'.$radio_id;
                     echo '<label><div>';
-                    echo '<input type="radio" id="'.$radio_option.'" name="answer['.$radio_name.']" value="'.htmlspecialchars($row['answer_'.$ans]).'">';
+                    echo '<input type="radio" id="'.$radio_option.'" name="answer['.$radio_name.']" value="'.$ans.'">';
                     echo $ans.'. '.htmlspecialchars($row['answer_'.$ans]);
                     echo '</div></label><br>';
                     $radio_id++;
                 }
+                if ($categoryTable == 'geography_localizations'){
+                        echo '<img src="location'.$location_number.'.png" alt="lokacja'.$location_number.'">';
+                };
                 
                 echo '<br><br><hr><br><br>';
                 $radio_name++;
+                $location_number++;
             };
             echo '<button type="submit">Wyślij odpowiedzi!</button>';
             echo "<br>";

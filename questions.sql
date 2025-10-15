@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Paź 15, 2025 at 09:10 AM
+-- Generation Time: Paź 15, 2025 at 10:21 AM
 -- Wersja serwera: 10.4.32-MariaDB
 -- Wersja PHP: 8.0.30
 
@@ -77,8 +77,20 @@ CREATE TABLE `geography_localizations` (
   `answer_B` varchar(50) NOT NULL,
   `answer_C` varchar(50) NOT NULL,
   `answer_D` varchar(50) NOT NULL,
-  `answer_correct` varchar(50) NOT NULL
+  `answer_correct` varchar(50) NOT NULL,
+  `image` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `geography_localizations`
+--
+
+INSERT INTO `geography_localizations` (`id`, `question`, `answer_A`, `answer_B`, `answer_C`, `answer_D`, `answer_correct`, `image`) VALUES
+(1, 'W jakim kraju zostało zrobione to zdjęcie?', 'Rosja', 'Ukraina ', 'Polska', 'Niemcy ', 'A', 'location1.png'),
+(2, 'W jakim kraju zostało zrobione to zdjęcie?', 'Rosja', 'Ukraina ', 'Polska', 'Niemcy ', 'A', 'location2.png'),
+(3, 'W jakim kraju zostało zrobione to zdjęcie?', 'Polska ', 'Niemcy', 'Rosja', 'Austria', 'B', 'location3.png'),
+(4, 'W jakim kraju zostało zrobione to zdjęcie?', 'Meksyk', 'Kanada ', 'Stany Zjednoczone', 'Polska', 'B', 'location4.png'),
+(5, 'W jakim kraju zostało zrobione to zdjęcie?', 'Bhutan', 'Nepal', 'Indie', 'Polska', 'C', 'location5.png');
 
 -- --------------------------------------------------------
 
@@ -265,7 +277,7 @@ ALTER TABLE `geography_flags`
 -- AUTO_INCREMENT for table `geography_localizations`
 --
 ALTER TABLE `geography_localizations`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `math_arithmetic`
