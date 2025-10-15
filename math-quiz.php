@@ -1,3 +1,8 @@
+<?php
+    $connection = mysqli_connect('localhost', 'root', '', 'questions');
+    $connection->set_charset("utf8mb4");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,18 +29,37 @@
                 <input type="hidden" name="categoryName" value="Matematyka">
                 <button class="category-button hoverable" name="pickedCategory" value="Arytmetyka">
                     <h3>Arytmetyka</h3>
-                    <p>30 pytań</p>
+                    <?php
+                        $sql = "SELECT count(*) as ilosc_pytan FROM math_arithmetic;";
+                        $result = mysqli_query($connection, $sql);
+                        $row = mysqli_fetch_assoc($result);
+                        echo "<p>Baza pytań: " . $row["ilosc_pytan"] . "</p>";
+                    ?>
                 </button>
                 <button class="category-button hoverable" name="pickedCategory" value="Płaszczyzna kartezjańska">
                     <h3>Płaszczyzna kartezjańska</h3>
-                    <p>30 pytań</p>
+                    <?php
+                        $sql = "SELECT count(*) as ilosc_pytan FROM math_cartesian_plane;";
+                        $result = mysqli_query($connection, $sql);
+                        $row = mysqli_fetch_assoc($result);
+                        echo "<p>Baza pytań: " . $row["ilosc_pytan"] . "</p>";
+                    ?>
                 </button>
                 <button class="category-button hoverable" name="pickedCategory" value="Trygonometria">
                     <h3>Trygonometria</h3>
-                    <p>30 pytań</p>
+                    <?php
+                        $sql = "SELECT count(*) as ilosc_pytan FROM math_trigonometry;";
+                        $result = mysqli_query($connection, $sql);
+                        $row = mysqli_fetch_assoc($result);
+                        echo "<p>Baza pytań: " . $row["ilosc_pytan"] . "</p>";
+                    ?>
                 </button>
             </form>
         </div>
     </div>
 </body>
 </html>
+
+<?php
+    mysqli_close($connection);
+?>

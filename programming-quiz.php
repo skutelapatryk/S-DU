@@ -1,3 +1,8 @@
+<?php
+    $connection = mysqli_connect('localhost', 'root', '', 'questions');
+    $connection->set_charset("utf8mb4");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,18 +29,37 @@
                 <input type="hidden" name="categoryName" value="Programowanie">
                 <button class="category-button hoverable" name="pickedCategory" value="Python">
                     <h3>Python</h3>
-                    <p>30 pytań</p>
+                    <?php
+                        $sql = "SELECT count(*) as ilosc_pytan FROM programming_python;";
+                        $result = mysqli_query($connection, $sql);
+                        $row = mysqli_fetch_assoc($result);
+                        echo "<p>Baza pytań: " . $row["ilosc_pytan"] . "</p>";
+                    ?>
                 </button>
                 <button class="category-button hoverable" name="pickedCategory" value="C+=">
                     <h3>C++</h3>
-                    <p>30 pytań</p>
+                    <?php
+                        $sql = "SELECT count(*) as ilosc_pytan FROM programming_cpp;";
+                        $result = mysqli_query($connection, $sql);
+                        $row = mysqli_fetch_assoc($result);
+                        echo "<p>Baza pytań: " . $row["ilosc_pytan"] . "</p>";
+                    ?>
                 </button>
                 <button class="category-button hoverable" name="pickedCategory" value="JavaScript">
                     <h3>JavaScript</h3>
-                    <p>30 pytań</p>
+                    <?php
+                        $sql = "SELECT count(*) as ilosc_pytan FROM programming_javascript;";
+                        $result = mysqli_query($connection, $sql);
+                        $row = mysqli_fetch_assoc($result);
+                        echo "<p>Baza pytań: " . $row["ilosc_pytan"] . "</p>";
+                    ?>
                 </button>
             </form>
         </div>
     </div>
 </body>
 </html>
+
+<?php
+    mysqli_close($connection);
+?>

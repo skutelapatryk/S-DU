@@ -126,6 +126,10 @@ body{
     transition: 200ms;
 }
 
+.quiz-category-div:hover{
+    transform: translateY(-5px) scale(1.01);
+}
+
 .hoverable {
     border: 1px solid transparent;
     background: linear-gradient(rgb(32,32,32)) padding-box,
@@ -134,7 +138,7 @@ body{
 }
 
 .hoverable:hover{
-    background: linear-gradient(rgb(28,28,28)) padding-box,
+    background: linear-gradient(rgb(28,28,28, .95)) padding-box,
                 conic-gradient(from var(--angle), var(--primary-color), var(--secondary-color), var(--primary-color)) border-box;
 }
 
@@ -282,4 +286,25 @@ body{
 
 .questions-number-form input[type="radio"] {
     display: none;
+}
+
+.score-element{
+    font-size: 32px;
+    color: rgb(215,215,215);
+    margin: 0;
+}
+
+.score-span{
+    position: relative;
+    width: auto;
+    height: auto;
+    padding-left: 18px;
+    padding-right: 18px;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    border-radius: 1rem;
+    border: 1px solid transparent;
+    background: linear-gradient(rgb(28,28,28, .95)) padding-box,
+                conic-gradient(from var(--angle), var(--primary-color), var(--secondary-color), var(--primary-color)) border-box;
+    animation: rotate 2s linear infinite;
 }
