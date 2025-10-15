@@ -1,13 +1,14 @@
 <?php
     $polaczenie = mysqli_connect('localhost', 'root', '', 'questions');
     $polaczenie->set_charset("utf8mb4");
+    $categoryTable = $_POST["chosenCategory"];
     $finalScore = 0;
 
     if (!empty($_POST['answer'])){
         $chosenone = $_POST['chosen'];
         $score = 0;
         $total = 0;
-        $zapytanie = ('select * from math_trigonometry');
+        $zapytanie = 'select * from ' . $categoryTable . ";";
         $wynik = mysqli_query($polaczenie, $zapytanie);
         $radio_named = 0;
         for ($i=0; $i < $chosenone; $i++){
