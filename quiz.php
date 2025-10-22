@@ -38,7 +38,7 @@
                 $answers = ['A', 'B', 'C', 'D'];
                 foreach ($answers as $ans) {
                     $radio_option = 'opcja'.$radio_id;
-                    echo '<label><div>';
+                    echo '<label><div class="answers-div">';
                     echo '<input type="radio" id="'.$radio_option.'" name="answer['.$radio_name.']" value="'.$ans.'">';
                     echo $ans.'. '.htmlspecialchars($row['answer_'.$ans]);
                     echo '</div></label><br>';

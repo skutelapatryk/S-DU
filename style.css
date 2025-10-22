@@ -2,7 +2,10 @@
     --bg-color: rgb(24,24,24);
     --primary-color: rgb(130, 255, 153);
     --secondary-color: rgb(168, 72, 237);
-}
+    --dark-border-color: rgb(32,32,32);
+    --hoverable-bg-color: rgb(32,32,32);
+    --hoverable-border-color: rgb(66,66,66);
+}   
 
 body{
     background: var(--bg-color);
@@ -25,7 +28,7 @@ body{
     background-color: transparent;
     display: flex;
     align-items: center;
-    justify-content: left;
+    justify-content: space-between;
 }
 
 .title a{
@@ -132,8 +135,8 @@ body{
 
 .hoverable {
     border: 1px solid transparent;
-    background: linear-gradient(rgb(32,32,32)) padding-box,
-                conic-gradient(rgb(66,66,66)) border-box;
+    background: linear-gradient(var(--hoverable-bg-color)) padding-box,
+                conic-gradient(var(--hoverable-border-color)) border-box;
     animation: rotate 2s linear infinite;
 }
 
@@ -307,4 +310,20 @@ body{
     background: linear-gradient(rgb(28,28,28, .95)) padding-box,
                 conic-gradient(from var(--angle), var(--primary-color), var(--secondary-color), var(--primary-color)) border-box;
     animation: rotate 2s linear infinite;
+}
+
+.mode-switch{
+    position: relative;
+    width: 48px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 30px;
+}
+
+.light-mode {
+  background-color: white;
+  color: white;
 }
