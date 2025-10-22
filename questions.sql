@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Paź 20, 2025 at 09:38 PM
+-- Generation Time: Paź 22, 2025 at 10:25 AM
 -- Wersja serwera: 10.4.32-MariaDB
--- Wersja PHP: 8.2.12
+-- Wersja PHP: 8.0.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -137,6 +137,22 @@ CREATE TABLE `math_arithmetic` (
   `image` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+--
+-- Dumping data for table `math_arithmetic`
+--
+
+INSERT INTO `math_arithmetic` (`id`, `question`, `answer_A`, `answer_B`, `answer_C`, `answer_D`, `answer_correct`, `image`) VALUES
+(1, 'Ile wynosi 5! ?', '1', '25', '75', '120', 'D', NULL),
+(2, 'Różnica to inaczej:', 'Dodawanie', 'Odjemowanie', 'Mnożenie', 'Dzielenie', 'B', NULL),
+(3, 'Ile wynosi log 1000?', '1', '2', '3', '10', 'C', NULL),
+(4, '2 + 2 * 2 równa się: ', '6', '8', '2', '4', 'A', NULL),
+(5, 'Jak inaczej można przedstawić ∜4?', '2', '4', '√2', '√4', 'C', NULL),
+(6, 'Liczba eulera \"e\" to w przybliżeniu: ', '2.71', '2.51', '3.31', '5.43', 'A', NULL),
+(7, 'Liczba pi \"π\" to w przybliżeniu: ', '1.11', '3.14', '3.13', '3', 'B', NULL),
+(8, 'Znajdź x. |x - 12| = 4', 'x = 16', 'x = 8', 'x = 16 oraz x = 8', 'x = 16 oraz x = -8', 'C', NULL),
+(9, 'Jeżeli a = 5, to a/(a/2) równa się: ', '5', '2', '1/5', '1/2', 'B', NULL),
+(10, 'Odwrotność liczby √2/2 to: ', '2', '1', '√2', '2,22222', 'C', NULL);
+
 -- --------------------------------------------------------
 
 --
@@ -153,6 +169,15 @@ CREATE TABLE `math_cartesian_plane` (
   `answer_correct` varchar(50) NOT NULL,
   `image` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `math_cartesian_plane`
+--
+
+INSERT INTO `math_cartesian_plane` (`id`, `question`, `answer_A`, `answer_B`, `answer_C`, `answer_D`, `answer_correct`, `image`) VALUES
+(1, 'Znajdź pierwiastki równania: x(2-x) = 0', 'x=0, x=2', 'x=0, x=-2', 'x=2, x=2', 'x=2, x=-2', 'A', NULL),
+(2, 'Znajdź pierwiastki równania: x(x-4) = 0', 'x=0, x=2', 'x=0, x=4', 'x=4', 'x=4, x=-4', 'B', NULL),
+(3, 'W kartezjańskim układzie współrzędnych (x, y) proste k oraz l są określone równaniami: y=(3m−2)x−2 oraz y=(2m+4)x+2. Proste k oraz l są równoległe, gdy liczba m jest równa', '(-6)', '2', '(-2)', '6', 'D', NULL);
 
 -- --------------------------------------------------------
 
@@ -345,13 +370,13 @@ ALTER TABLE `geography_localizations`
 -- AUTO_INCREMENT for table `math_arithmetic`
 --
 ALTER TABLE `math_arithmetic`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `math_cartesian_plane`
 --
 ALTER TABLE `math_cartesian_plane`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `math_trigonometry`
