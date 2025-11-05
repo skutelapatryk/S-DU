@@ -28,21 +28,28 @@
             $finalScore = 0;
 
             if (!empty($_POST['answer'])){
-                $chosenone = $_POST['chosen'];
+                $wylosowane = json_decode($_POST['wylosowane'], true);
+
+                if (count($wylosowane) < $_POST['chosen']){
+                    $chosenone = count($wylosowane);
+                }
+                else{
+                    $chosenone = $_POST['chosen'];
+                }
+
                 $score = 0;
                 $total = 0;
-                $zapytanie = 'select * from ' . $categoryTable . ";";
-                $wynik = mysqli_query($polaczenie, $zapytanie);
-                $radio_named = 0;
+
                 for ($i=0; $i < $chosenone; $i++){
+                    $zapytanie = 'select * from ' . $categoryTable . " where id=" . $wylosowane[$total];
+                    $wynik = mysqli_query($polaczenie, $zapytanie);
                     $row = mysqli_fetch_assoc($wynik);
-                    $selectedValue = $_POST['answer'][$radio_named];
+                    $selectedValue = $_POST['answer'][$total];
                     $correctValue = $row['answer_correct'];
 
                     if ($selectedValue === $correctValue){
                         $score++;
                     }
-                    $radio_named++;
                     $total++;
                 }
                 $finalScore =  round((($score / $total) * 100), 2);
@@ -56,7 +63,6 @@
             $polaczenie = mysqli_connect('localhost', 'root', '', 'questions');
             $polaczenie->set_charset("utf8mb4");
             $zapytanie = "select * from " . $categoryTable;
-            $wynik = mysqli_query($polaczenie, $zapytanie);
             $radio_name = 0;
             $radio_id = 1;
             $location_number = 1;
@@ -64,9 +70,13 @@
             $chosenone = $_POST['chosen'];
 
             for ($i=1; $i <= $chosenone; $i++){
+                $zapytanie = "select * from " . $categoryTable . " where id=" . $wylosowane[$radio_name];
+                $wynik = mysqli_query($polaczenie, $zapytanie);
+
                 $row = mysqli_fetch_assoc($wynik);
                 $selectedValue = $_POST['answer'][$radio_name];
                 $correctValue = $row['answer_correct'];
+
                 echo '<p class="lgbttext2">'.$row['question'].'</p><br><br>';
                 
                 $answers = ['A', 'B', 'C', 'D'];
@@ -86,25 +96,34 @@
                         echo '<input type="radio" id="'.$radio_option.'" name="answer['.$radio_name.']" value="'.$ans.'" disabled>';
                         echo $ans.'. '.htmlspecialchars($row['answer_'.$ans]);
                     };
-
                     echo '</div></label><br>';
                     $radio_id++;
                 }
+
                 if (!empty($row['image'])){
-                        echo '<img src="images/'.$categoryTable.'_'.$location_number.'.png" alt="'.$categoryTable.$location_number.'">';
-                        $location_number++;
-                    };
+                    echo '<img src="images/'.$categoryTable.'_'.$wylosowane[$radio_name].'.png" alt="'.$categoryTable.$wylosowane[$radio_name].'">';
+                };
                 
                 echo '<br><br><hr><br><br>';
                 $radio_name++;
             };
         ?>
-        <form action="home.php" method="post">
+        <button onclick="redirectToHomePage();" class="back-button">Wróć do menu!</button>
             <?php
-                echo "<input type='hidden' name='currentMode' value='".$currentMode."'>";
+                if ($_POST['category'] == "random"){
+                    echo '<form action="quiz.php?category=random" method="post">';
+                    echo "<input type='hidden' name='currentMode' value='".$currentMode."'>";
+                    echo "<button type='submit' id='randomDiv' class='one-more-button'>Jeszcze jedno pytanie!</button>";
+                    echo '</form>';
+                }
+                else {
+                    echo '<form action="quiz.php" method="post">';
+                    echo "<input type='hidden' name='currentMode' value='".$currentMode."'>";
+                    echo "<input type='hidden' name='categoryTable' value='". $categoryTable ."'>";
+                    echo "<button type='submit' class='one-more-button'>Jeszcze jedno pytanie!</button>";
+                    echo '</form>';
+                }
             ?>
-            <button onclick='window.location.href="home.php"' class="back-button">Wróć do menu!</button>
-        </form>
 
     <button class="mode-switch" id="modeSwitch" onclick="changeIcon();">
         <svg id="modeIcon" class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">

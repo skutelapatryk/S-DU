@@ -6,6 +6,17 @@
     --bg-color: rgb(24,24,24);
     --primary-color: rgb(130, 255, 153);
     --secondary-color: rgb(168, 72, 237);
+    --dark-border-color: rgb(32,32,32);
+    --hoverable-bg-color: rgb(32,32,32);
+    --hoverable-hover-bg-color: rgba(28,28,28, .95);
+    --hoverable-border-color: rgb(66,66,66);
+    --h1-color: rgb(235,235,235);
+    --h2-color: rgb(215,215,215);
+    --h3-color: rgb(225,225,225);
+    --p-color: rgb(215,215,215);
+    --li-color: rgb(160,160,160);
+    --card-span-bg: rgb(42,42,42);
+    --card-span-border-color: rgb(65,65,65);
 }
 
 body{

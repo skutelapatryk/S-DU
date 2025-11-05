@@ -54,6 +54,12 @@
                         <li><span class="category-card-span">C++</span></li>
                     </ul>
                 </div>
+                <div class="quiz-category-div hoverable" id="randomDiv">
+                    <h2>Losowe pytanie</h2>
+                    <ul class="span-wrapper">
+                        <li><span class="category-card-span">Wszystkie kategorie</span></li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>

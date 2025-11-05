@@ -74,3 +74,7 @@ let aHome = document.querySelector("#a-home");
 aHome.addEventListener("click", function test(){
     window.location = "home.php?currentMode=" + encodeURIComponent(currentModeElement[0].value);
 });
+
+function redirectToHomePage(){
+    window.location = "home.php?currentMode=" + encodeURIComponent(currentModeElement[0].value);
+}

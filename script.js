@@ -14,13 +14,13 @@ mathDiv.addEventListener("click", function test(){
 });
 
 geographyDiv.addEventListener("click", function test(){
-    window.location = "geography-quiz.php?currentMode=" + encodeURIComponent(currentModeElement[0].value);;
+    window.location = "geography-quiz.php?currentMode=" + encodeURIComponent(currentModeElement[0].value);
 });
 
 programmingDiv.addEventListener("click", function test(){
-    window.location = "programming-quiz.php?currentMode=" + encodeURIComponent(currentModeElement[0].value);;
+    window.location = "programming-quiz.php?currentMode=" + encodeURIComponent(currentModeElement[0].value);
 });
 
 randomDiv.addEventListener("click", function test(){
-    window.location = "quiz.php?currentMode=" + encodeURIComponent(currentModeElement[0].value);;
+    window.location = "quiz.php?currentMode=" + encodeURIComponent(currentModeElement[0].value) + "&category=random";
 });
