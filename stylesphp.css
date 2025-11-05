@@ -1,16 +1,19 @@
 *{
     user-select: none;
 }
+
 :root{
     --bg-color: rgb(24,24,24);
     --primary-color: rgb(130, 255, 153);
     --secondary-color: rgb(168, 72, 237);
 }
+
 body{
     background-color: var(--bg-color);
     color: white;
     font-family: Roboto, sans-serif;
 }
+
 label, p{
     display: flex;
     justify-content: center;
@@ -25,6 +28,7 @@ hr{
 p{
     margin: 0;
 }
+
 input[type="radio"]{
     appearance: none;
 }
@@ -121,6 +125,7 @@ header{
 .title a:hover{
     color: rgb(225,225,225);
 }
+
 button{
     display: flex;
     text-align: center;
@@ -140,6 +145,7 @@ button{
                 conic-gradient(rgb(66,66,66)) border-box;
     animation: rotate 2s linear infinite;
 }
+
 button:hover{
    background: linear-gradient(rgb(28,28,28, .90)) padding-box,
                 conic-gradient(from var(--angle), var(--primary-color), var(--secondary-color), var(--primary-color)) border-box;

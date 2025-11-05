@@ -5,17 +5,31 @@
     --bg-color: rgb(24,24,24);
     --primary-color: rgb(130, 255, 153);
     --secondary-color: rgb(168, 72, 237);
+    --dark-border-color: rgb(32,32,32);
+    --hoverable-bg-color: rgb(32,32,32);
+    --hoverable-hover-bg-color: rgba(28,28,28, .95);
+    --hoverable-border-color: rgb(66,66,66);
+    --h1-color: rgb(235,235,235);
+    --h2-color: rgb(215,215,215);
+    --li-color: rgb(185,185,185);
 }
+
 body{
     background-color: var(--bg-color);
     color: white;
 }
+
 label, p{
     display: flex;
     justify-content: center;
 }
+
 label:hover{
     color: var(--primary-color);
+}
+
+label{
+    color: var(--h1-color);
 }
 
 hr{
@@ -27,50 +41,44 @@ hr{
 p{
     margin: 0;
 }
+
 input[type="radio"]{
     appearance: none;
 }
-div:has(input[type="radio"]:checked){
-    color: var(--primary-color);
-}
-div:has(input[type="radio"]:checked)::after{
-    content: "";
-    position: absolute;
-    background-image: linear-gradient(var(--primary-color), var(--secondary-color));
+
+@property --angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: true;
 }
 
-div{
+@keyframes rotate {
+    to{
+        --angle: 1turn;
+    }
+}
+
+.answers-div{
     position: relative;
     cursor: pointer;
     width: 750px;
     height: 20px;
     padding: 5px;
     border-radius: 0.5rem;
-    background-color: rgb(32,32,32);
+    border: 2px solid transparent;
+    background: linear-gradient(var(--hoverable-bg-color)) padding-box,
+                conic-gradient(var(--hoverable-border-color)) border-box;
 }
 
-div::after{
-    content: "";
-    display: flex;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color: transparent;
-    background-image: linear-gradient(rgb(66,66,66));
-    padding: 2px;
-    left: -1px;
-    bottom: -1px;
-    z-index: -1;
-    border-radius: inherit;
-    transition: 200ms;
+.answers-div:has(input[type="radio"]:checked){
+    color: var(--primary-color);
+    background: linear-gradient(var(--hoverable-bg-color)) padding-box,
+                linear-gradient(45deg, var(--primary-color), var(--secondary-color)) border-box;
 }
 
-div:hover:after{
-    background-image: linear-gradient(rgb(125,125,125));
-}
-
-div:hover{
-    background-color: rgb(28,28,28);
+.answers-div:hover{
+    background: linear-gradient(var(--hoverable-bg-color)) padding-box,
+                linear-gradient(45deg, var(--primary-color), var(--secondary-color)) border-box;
 }
 
 .lgbttext{
@@ -94,21 +102,20 @@ header{
     align-items: center;
     position: relative;
 }
+
 .title{
     width: 100%;
     background-color: transparent;
     display: flex;
     align-items: center;
-    justify-content: left;
-    font-family: Roboto, sans-serif;
+    justify-content: space-between;
 }
 
 .title a{
-    padding: 0;
     font-size: 40px;
-    margin-left: 32px;
+    margin-left: 40px;
     cursor: pointer;
-    padding-top: 7.75px;
+    padding-top: 16px;
     padding-bottom: 16px;
     font-weight: 600;
     color: rgb(160,160,160);
@@ -119,7 +126,8 @@ header{
 .title a:hover{
     color: rgb(225,225,225);
 }
-button{
+
+.submitButton{
     display: flex;
     text-align: center;
     justify-content: center;
@@ -135,14 +143,42 @@ button{
     font-weight: bold;
     color: rgb(0,0,0);
 }
-button:hover{
+
+.submitButton:hover{
    border: 2px solid white;
    color: white;
 }
+
 img{
     width: 700px;
     height: 400px;
     margin: auto;
     justify-content: center;
     display: flex;
+}
+
+.mode-switch{
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin-bottom: 30px;
+    margin-right: 30px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    border: 1px solid transparent;
+    background: linear-gradient(var(--hoverable-bg-color)) padding-box,
+                conic-gradient(var(--hoverable-border-color)) border-box;
+    border-radius: 0.4rem;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: white;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.mode-switch:hover{
+    background: linear-gradient(var(--hoverable-hover-bg-color)) padding-box,
+                conic-gradient(from var(--angle), var(--primary-color), var(--secondary-color), var(--primary-color)) border-box;
+    animation: rotate 2s linear infinite;
 }

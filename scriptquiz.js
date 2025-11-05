@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.querySelector("form");
-  const submitBtn = form.querySelector("button[type='submit']");
+  const submitBtn = form.getElementsByClassName("submitButton");
   const radios = form.querySelectorAll("input[type='radio']");
 
   const questionNames = [...new Set([...radios].map(r => r.name))];
