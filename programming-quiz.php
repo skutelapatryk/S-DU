@@ -17,10 +17,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <?php
-        echo "<input type='hidden' name='currentMode' value='".$currentMode."'>";
-    ?>
-
     <div class="viewport">
         <div class="title">
             <a id="a-home">Quizy</a>
@@ -31,6 +27,10 @@
         </div>
         <div class="questions-categories-div">
             <form action="questions-number-pick.php" method="post">
+                <?php
+                    echo "<input type='hidden' name='currentMode' value='".$currentMode."'>";
+                ?>
+                
                 <input type="hidden" name="categoryName" value="Programowanie">
                 <button class="category-button hoverable" name="pickedCategory" value="Python">
                     <h3>Python</h3>

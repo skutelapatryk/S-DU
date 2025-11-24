@@ -118,8 +118,8 @@
                     $radio_id++;
                 }
                     if (!empty($row['image'])){
-                        echo '<a href="images/'.$categoryTable.'_'.$random_question.'.png" target="_blank">';
-                        echo '<img src="images/'.$categoryTable.'_'.$random_question.'.png" alt="'.$categoryTable.$random_question.'">';
+                        echo '<a href="images/' . $row["image"] . '" target="_blank">';
+                        echo '<img src="images/' . $row["image"] . '" alt="'.$row["image"].'">';
                         echo '</a>';
                     };
                 

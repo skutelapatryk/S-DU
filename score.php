@@ -101,7 +101,7 @@
                 }
 
                 if (!empty($row['image'])){
-                    echo '<img src="images/'.$categoryTable.'_'.$wylosowane[$radio_name].'.png" alt="'.$categoryTable.$wylosowane[$radio_name].'">';
+                    echo '<img src="images/'. $row['image'] . '" alt="'.$categoryTable.$wylosowane[$radio_name].'">';
                 };
                 
                 echo '<br><br><hr><br><br>';
