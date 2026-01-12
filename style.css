@@ -1,310 +1,453 @@
-:root{
-    --bg-color: rgb(24,24,24);
-    --primary-color: rgb(130, 255, 153);
-    --secondary-color: rgb(168, 72, 237);
+:root {
+	--bg-color: rgb(24, 24, 24);
+	--primary-color: rgb(130, 255, 153);
+	--secondary-color: rgb(168, 72, 237);
+	--dark-border-color: rgb(32, 32, 32);
+	--hoverable-bg-color: rgb(32, 32, 32);
+	--hoverable-hover-bg-color: rgba(28, 28, 28, 0.95);
+	--hoverable-border-color: rgb(66, 66, 66);
+	--h1-color: rgb(235, 235, 235);
+	--h2-color: rgb(215, 215, 215);
+	--h3-color: rgb(225, 225, 225);
+	--p-color: rgb(215, 215, 215);
+	--li-color: rgb(160, 160, 160);
+	--card-span-bg: rgb(42, 42, 42);
+	--card-span-border-color: rgb(65, 65, 65);
+
+	/* Login */
+	--login-card-color: rgb(42, 42, 42);
+	--login-input-color: rgb(62, 62, 62);
+	--login-input-border-color: rgb(80, 80, 80);
+	--login-label-color: rgb(140, 140, 140);
+	--login-button-color: rgb(255, 255, 255);
+	--login-button-hover-color: rgb(225, 225, 225);
+	--login-button-text-color: rgb(0, 0, 0);
 }
 
-body{
-    background: var(--bg-color);
-    font-family: Roboto, sans-serif;
+body {
+	background: var(--bg-color);
+	font-family: Roboto, sans-serif;
 }
 
-.viewport{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: transparent;
-    display: flex;
-    flex-direction: column;
+.viewport {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: transparent;
+	display: flex;
+	flex-direction: column;
 }
 
-.title{
-    width: 100%;
-    background-color: transparent;
-    display: flex;
-    align-items: center;
-    justify-content: left;
+.title {
+	width: 100%;
+	background-color: transparent;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
 }
 
-.title a{
-    font-size: 40px;
-    margin-left: 40px;
-    cursor: pointer;
-    padding-top: 16px;
-    padding-bottom: 16px;
-    font-weight: 600;
-    color: rgb(160,160,160);
-    text-decoration: none;
-    transition: 200ms;
+.title a {
+	font-size: 40px;
+	margin-left: 40px;
+	cursor: pointer;
+	padding-top: 16px;
+	padding-bottom: 16px;
+	font-weight: 600;
+	color: rgb(160, 160, 160);
+	text-decoration: none;
+	transition: 200ms;
 }
 
-.title a:hover{
-    color: rgb(225,225,225);
+.title a:hover {
+	color: rgb(225, 225, 225);
 }
 
-.welcome-div{
-    width: 100%;
-    background-color: transparent;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    align-items: center;
+.welcome-div {
+	width: 100%;
+	background-color: transparent;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	align-items: center;
 }
 
-.welcome-div h1{
-    font-size: 46px;
-    color: transparent;
-    background-clip: text;
-    background-image: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+.gradient-text {
+	font-size: 46px;
+	color: transparent;
+	background-clip: text;
+	background-image: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
 }
 
-.welcome-div h3{
-    font-size: 28px;
-    color: rgb(200,200,200);
+.welcome-div h3 {
+	font-size: 28px;
+	color: rgb(200, 200, 200);
 }
 
-.quizes-div{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.quizes-div {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
 
-.quizes-div h1{
-    color: rgb(235,235,235);
-    font-size: 36px;
+.quizes-div h1 {
+	color: var(--h1-color);
+	font-size: 36px;
 }
 
-.category-wrapper{
-    position: relative;
-    display: flex;
-    width: inherit;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    flex-wrap: wrap;
+.category-wrapper {
+	position: relative;
+	display: flex;
+	width: inherit;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	gap: 20px;
+	flex-wrap: wrap;
 }
 
-.category-wrapper ul{
-    list-style: none;
-    padding: 0;
-    color: rgb(200,200,200);
-    background-color: transparent;
-    width: 80%;
-}
-
-.category-wrapper ul li{
-    margin-bottom: 4px;
+.category-wrapper ul li {
+	color: var(--li-color);
 }
 
 @property --angle {
-    syntax: "<angle>";
-    initial-value: 0deg;
-    inherits: true;
+	syntax: "<angle>";
+	initial-value: 0deg;
+	inherits: true;
 }
 
 @keyframes rotate {
-    to{
-        --angle: 1turn;
-    }
+	to {
+		--angle: 1turn;
+	}
 }
 
-.quiz-category-div{
-    position: relative;
-    width: 275px;
-    height: 275px;
-    border: 1px solid transparent;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border-radius: 0.5rem;
-    cursor: pointer;
-    transition: 200ms;
+.quiz-category-div {
+	position: relative;
+	width: 275px;
+	height: 275px;
+	border: 1px solid transparent;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	border-radius: 0.5rem;
+	cursor: pointer;
+	transition: 200ms;
 }
 
-.quiz-category-div:hover{
-    transform: translateY(-5px) scale(1.01);
+.quiz-category-div:hover {
+	transform: translateY(-5px) scale(1.01);
 }
 
 .hoverable {
-    border: 1px solid transparent;
-    background: linear-gradient(rgb(32,32,32)) padding-box,
-                conic-gradient(rgb(66,66,66)) border-box;
-    animation: rotate 2s linear infinite;
+	border: 1px solid transparent;
+	background: linear-gradient(var(--hoverable-bg-color)) padding-box, conic-gradient(var(--hoverable-border-color)) border-box;
+	animation: rotate 2s linear infinite;
+	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
-.hoverable:hover{
-    background: linear-gradient(rgb(28,28,28, .95)) padding-box,
-                conic-gradient(from var(--angle), var(--primary-color), var(--secondary-color), var(--primary-color)) border-box;
+.hoverable:hover {
+	background: linear-gradient(var(--hoverable-hover-bg-color)) padding-box, conic-gradient(from var(--angle), var(--primary-color), var(--secondary-color), var(--primary-color)) border-box;
 }
 
-.quiz-category-div h2{
-    color: white;
+.quiz-category-div h2 {
+	position: relative;
+	color: var(--h2-color);
+	width: 80%;
+	margin-bottom: 20px;
 }
 
-.questions-categories-div{
-    position: relative;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
+.quiz-category-div h3 {
+	position: relative;
+	color: var(--h3-color);
+	width: 80%;
+	margin-top: 0;
+	margin-bottom: 12px;
 }
 
-.questions-categories-div form{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
+.questions-categories-div {
+	position: relative;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 20px;
 }
 
-.category-button{
-    position: relative;
-    width: 400px;
-    border: none;
-    border-radius: 0.75rem;
-    border: 1px solid transparent;
-    display: flex;
-    flex-direction: column;
-    cursor: pointer;
-    transition: 250ms;
-    text-decoration: none;
-    align-items: start;
+.questions-categories-div form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 20px;
 }
 
-.category-button h3{
-    font-size: 20px;
-    color: white;
-    margin-left: 10px;
-    font-weight: 500;
-    margin-bottom: 10px;
-    margin-top: 12px;
+.category-button {
+	position: relative;
+	width: 400px;
+	border: none;
+	border-radius: 0.75rem;
+	border: 1px solid transparent;
+	display: flex;
+	flex-direction: column;
+	cursor: pointer;
+	transition: 250ms;
+	text-decoration: none;
+	align-items: start;
 }
 
-.category-button p{
-    font-size: 14px;
-    color: white;
-    margin-left: 10px;
-    margin-top: 0;
+.category-button h3 {
+	font-size: 20px;
+	color: var(--h3-color);
+	margin-left: 10px;
+	font-weight: 500;
+	margin-bottom: 10px;
+	margin-top: 12px;
 }
 
-.category-div{
-    position: relative;
-    width: 400px;
-    background-color: rgb(32,32,32);
-    border-radius: 0.75rem;
-    display: flex;
-    flex-direction: column;
-    cursor: pointer;
-    transition: 250ms;
-    text-decoration: none;
+.category-button p {
+	font-size: 14px;
+	color: var(--p-color);
+	margin-left: 10px;
+	margin-top: 0;
 }
 
-.category-div::after{
-    content: "";
-    display: flex;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color: transparent;
-    background-image: linear-gradient(rgb(66,66,66));
-    padding: 1px 1px 1px 1px;
-    left: -1px;
-    bottom: -1px;
-    z-index: -1;
-    border-radius: inherit;
-    transition: 200ms;
+.category-div {
+	position: relative;
+	width: 400px;
+	background-color: rgb(32, 32, 32);
+	border-radius: 0.75rem;
+	display: flex;
+	flex-direction: column;
+	cursor: pointer;
+	transition: 250ms;
+	text-decoration: none;
 }
 
-.category-div:hover:after{
-    background-image: linear-gradient(var(--primary-color), var(--secondary-color));
+.category-div::after {
+	content: "";
+	display: flex;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: transparent;
+	background-image: linear-gradient(rgb(66, 66, 66));
+	padding: 1px 1px 1px 1px;
+	left: -1px;
+	bottom: -1px;
+	z-index: -1;
+	border-radius: inherit;
+	transition: 200ms;
 }
 
-.category-div:hover{
-    background-color: rgb(28,28,28);
+.category-div:hover:after {
+	background-image: linear-gradient(var(--primary-color), var(--secondary-color));
 }
 
-.category-div h3{
-    font-size: 20px;
-    color: white;
-    margin-left: 10px;
-    font-weight: 500;
-    margin-bottom: 10px;
-    margin-top: 12px;
+.category-div:hover {
+	background-color: rgb(28, 28, 28);
 }
 
-.category-div p{
-    font-size: 14px;
-    color: white;
-    margin-left: 10px;
-    margin-top: 0;
+.category-div h3 {
+	font-size: 20px;
+	color: white;
+	margin-left: 10px;
+	font-weight: 500;
+	margin-bottom: 10px;
+	margin-top: 12px;
 }
 
-.questions-number-div{
-    position: relative;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
+.category-div p {
+	font-size: 14px;
+	color: white;
+	margin-left: 10px;
+	margin-top: 0;
 }
 
-.question-number-div{
-    position: relative;
-    width: 275px;
-    background-color: rgb(32,32,32);
-    border: 1px solid transparent;
-    border-radius: 0.75rem;
-    padding-top: 14px;
-    padding-bottom: 14px;
-    font-size: 16px;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    cursor: pointer;
-    transition: 250ms;
-    text-decoration: none;
-    align-items: center;
+.questions-number-div {
+	position: relative;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 20px;
 }
 
-.question-number-div h3{
-    font-size: 20px;
-    color: white;
-    font-weight: 500;
-    margin: 12px;
+.question-number-div {
+	position: relative;
+	width: 275px;
+	background-color: rgb(32, 32, 32);
+	border: 1px solid transparent;
+	border-radius: 0.75rem;
+	padding-top: 14px;
+	padding-bottom: 14px;
+	font-size: 16px;
+	color: var(--p-color);
+	display: flex;
+	flex-direction: column;
+	cursor: pointer;
+	transition: 250ms;
+	text-decoration: none;
+	align-items: center;
 }
 
-.questions-number-form{
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+.question-number-div h3 {
+	font-size: 20px;
+	color: white;
+	font-weight: 500;
+	margin: 12px;
+}
+
+.questions-number-form {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
 }
 
 .questions-number-form input[type="radio"] {
-    display: none;
+	display: none;
 }
 
-.score-element{
-    font-size: 32px;
-    color: rgb(215,215,215);
-    margin: 0;
+.score-element {
+	font-size: 32px;
+	color: rgb(215, 215, 215);
+	margin: 0;
 }
 
-.score-span{
-    position: relative;
-    width: auto;
-    height: auto;
-    padding-left: 18px;
-    padding-right: 18px;
-    padding-top: 14px;
-    padding-bottom: 14px;
-    border-radius: 1rem;
-    border: 1px solid transparent;
-    background: linear-gradient(rgb(28,28,28, .95)) padding-box,
-                conic-gradient(from var(--angle), var(--primary-color), var(--secondary-color), var(--primary-color)) border-box;
-    animation: rotate 2s linear infinite;
+.score-span {
+	position: relative;
+	width: auto;
+	height: auto;
+	padding-left: 18px;
+	padding-right: 18px;
+	padding-top: 14px;
+	padding-bottom: 14px;
+	border-radius: 1rem;
+	border: 1px solid transparent;
+	background: linear-gradient(rgb(28, 28, 28, 0.95)) padding-box, conic-gradient(from var(--angle), var(--primary-color), var(--secondary-color), var(--primary-color)) border-box;
+	animation: rotate 2s linear infinite;
+}
+
+.mode-switch {
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	margin-bottom: 30px;
+	margin-right: 30px;
+	width: 50px;
+	height: 50px;
+	display: flex;
+	border: 1px solid transparent;
+	background: linear-gradient(var(--hoverable-bg-color)) padding-box, conic-gradient(var(--hoverable-border-color)) border-box;
+	border-radius: 0.4rem;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	color: white;
+	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.mode-switch:hover {
+	background: linear-gradient(var(--hoverable-hover-bg-color)) padding-box, conic-gradient(from var(--angle), var(--primary-color), var(--secondary-color), var(--primary-color)) border-box;
+	animation: rotate 2s linear infinite;
+}
+
+.light-mode {
+	background-color: white;
+	color: white;
+}
+
+.span-wrapper {
+	position: relative;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	width: 80%;
+}
+
+.category-card-span {
+	position: relative;
+	padding: 6px 8px;
+	background-color: var(--card-span-bg);
+	border: 1px solid var(--card-span-border-color);
+	border-radius: 100vw;
+	display: block;
+	margin-bottom: 4px;
+	font-size: 14px;
+	left: -4px;
+}
+
+.login-card {
+	position: relative;
+	margin-top: 100px;
+	width: 500px;
+	height: 400px;
+	background-color: var(--login-card-color);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	border-radius: 0.75rem;
+	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.login-card-title {
+	margin-top: 16px;
+	padding: 0;
+	font-size: 40px;
+}
+
+.input-div {
+	position: relative;
+	width: 80%;
+	height: auto;
+	background-color: transparent;
+	display: flex;
+	flex-direction: column;
+	align-items: self-start;
+	gap: 4px;
+	margin-bottom: 20px;
+	border-radius: inherit;
+}
+
+.input-div label {
+	color: var(--login-label-color);
+}
+
+.input-div input {
+	position: relative;
+	width: 100%;
+	height: 34px;
+	border-radius: inherit;
+	border: 1px solid transparent;
+	outline: none;
+	background: linear-gradient(var(--login-input-color)) padding-box, conic-gradient(from var(--angle), var(--login-input-border-color)) border-box;
+	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.input-div input:focus {
+	background: linear-gradient(var(--hoverable-hover-bg-color)) padding-box, conic-gradient(from var(--angle), var(--primary-color), var(--secondary-color), var(--primary-color)) border-box;
+	animation: rotate 2s linear infinite;
+}
+
+.login-button {
+	margin-top: auto;
+	margin-bottom: 40px;
+	width: 80%;
+	height: 48px;
+	cursor: pointer;
+	border-radius: inherit;
+	border: none;
+	background: var(--login-button-color);
+	transition: 250ms background;
+	color: var(--login-button-text-color);
+	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.login-button:hover {
+	background-color: var(--login-button-hover-color);
 }
