@@ -4,6 +4,10 @@ function redirect(url) {
 	window.location = url;
 }
 
+function redirectWithVariable(pageName, variable){
+	window.location = pageName + "?" + variable + "=" + encodeURIComponent(currentModeElement[0].value);
+}
+
 let mathDiv = document.querySelector("#mathDiv");
 let geographyDiv = document.querySelector("#geographyDiv");
 let programmingDiv = document.querySelector("#programmingDiv");

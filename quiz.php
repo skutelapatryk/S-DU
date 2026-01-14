@@ -54,6 +54,7 @@
             };
 
             $zapytanie = "select * from " . $categoryTable;
+            $zapytanie = "select * from collection where category='" . $categoryTable . "';";
             $wynik = mysqli_query($polaczenie, $zapytanie);
             //====================================================================
 
@@ -80,11 +81,21 @@
 
             for ($i=1; $i <= $chosenone; $i++){
                 //====================================================================
-                $zapytanie = "select count(id) as liczba_pytan from " . $categoryTable;
+                $zapytanie = "select count(id) as liczba_pytan from collection where category='" . $categoryTable . "';";
                 $wynik = mysqli_query($polaczenie, $zapytanie);
                 $row = mysqli_fetch_assoc($wynik);
                 $amount = $row['liczba_pytan'];
                 
+                $zapytanie2 = "SELECT id as ids from categories where category='" . $categoryTable . "'";
+                $row2 = mysqli_fetch_assoc($wynik);
+                $idArray = array();
+
+                foreach ($row as $item) {
+                    $idArray[] = $item;
+                }
+
+                echo $idArray[0];
+
                 if (count($_SESSION['wylosowane']) >= $amount){
                     session_write_close();
                     echo '<section><button type="submit">Wyślij odpowiedzi!</button></section>';
@@ -101,9 +112,11 @@
                 while (in_array($random_question, $_SESSION['wylosowane']));
                 $_SESSION['wylosowane'][] = $random_question;
                 session_write_close();
-
-                $zapytanie = "select * from " . $categoryTable . " where id=".$random_question;
+                
+                $zapytanie = "SELECT * FROM collection where category='" . $categoryTable . "' AND id=" . $random_question . ";";
                 $wynik = mysqli_query($polaczenie, $zapytanie);
+
+
                 $row = mysqli_fetch_assoc($wynik);
                 //====================================================================
 

@@ -35,7 +35,7 @@
                 <button class="category-button hoverable" name="pickedCategory" value="Flagi">
                     <h3>Flagi</h3>
                     <?php
-                        $sql = "SELECT count(*) as ilosc_pytan FROM geography_flags;";
+                        $sql = "SELECT count(*) as ilosc_pytan FROM collection WHERE category = 'geography_flags'";
                         $result = mysqli_query($connection, $sql);
                         $row = mysqli_fetch_assoc($result);
                         echo "<p>Baza pytań: " . $row["ilosc_pytan"] . "</p>";
@@ -44,7 +44,7 @@
                 <button class="category-button hoverable" name="pickedCategory" value="Lokalizacja">
                     <h3>Lokalizacja</h3>
                     <?php
-                        $sql = "SELECT count(*) as ilosc_pytan FROM geography_localizations;";
+                        $sql = "SELECT count(*) as ilosc_pytan FROM collection WHERE category = 'geography_localizations'";
                         $result = mysqli_query($connection, $sql);
                         $row = mysqli_fetch_assoc($result);
                         echo "<p>Baza pytań: " . $row["ilosc_pytan"] . "</p>";
@@ -53,7 +53,7 @@
                 <button class="category-button hoverable" name="pickedCategory" value="Stolice">
                     <h3>Stolice</h3>
                     <?php
-                        $sql = "SELECT count(*) as ilosc_pytan FROM geography_capitals;";
+                        $sql = "SELECT count(*) as ilosc_pytan FROM collection WHERE category = 'geography_capitals'";
                         $result = mysqli_query($connection, $sql);
                         $row = mysqli_fetch_assoc($result);
                         echo "<p>Baza pytań: " . $row["ilosc_pytan"] . "</p>";

@@ -35,7 +35,7 @@
                 <button class="category-button hoverable" name="pickedCategory" value="Python">
                     <h3>Python</h3>
                     <?php
-                        $sql = "SELECT count(*) as ilosc_pytan FROM programming_python;";
+                        $sql = "SELECT count(*) as ilosc_pytan FROM collection WHERE category = 'programming_python'";
                         $result = mysqli_query($connection, $sql);
                         $row = mysqli_fetch_assoc($result);
                         echo "<p>Baza pytań: " . $row["ilosc_pytan"] . "</p>";
@@ -44,7 +44,7 @@
                 <button class="category-button hoverable" name="pickedCategory" value="C++">
                     <h3>C++</h3>
                     <?php
-                        $sql = "SELECT count(*) as ilosc_pytan FROM programming_cpp;";
+                        $sql = "SELECT count(*) as ilosc_pytan FROM collection WHERE category = 'programming_cpp'";
                         $result = mysqli_query($connection, $sql);
                         $row = mysqli_fetch_assoc($result);
                         echo "<p>Baza pytań: " . $row["ilosc_pytan"] . "</p>";
@@ -53,7 +53,7 @@
                 <button class="category-button hoverable" name="pickedCategory" value="JavaScript">
                     <h3>JavaScript</h3>
                     <?php
-                        $sql = "SELECT count(*) as ilosc_pytan FROM programming_javascript;";
+                        $sql = "SELECT count(*) as ilosc_pytan FROM collection WHERE category = 'programming_javascript'";
                         $result = mysqli_query($connection, $sql);
                         $row = mysqli_fetch_assoc($result);
                         echo "<p>Baza pytań: " . $row["ilosc_pytan"] . "</p>";

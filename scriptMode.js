@@ -27,6 +27,7 @@ function changeMode(mode) {
 		document.documentElement.style.setProperty("--login-card-color", "rgb(255, 255, 255)");
 		document.documentElement.style.setProperty("--login-input-color", "rgb(255, 255, 255)");
 		document.documentElement.style.setProperty("--login-input-border-color", "rgb(220, 220, 220)");
+		document.documentElement.style.setProperty("--login-input-text-color", "rgb(0, 0, 0)");
 		document.documentElement.style.setProperty("--login-label-color", "rgb(140, 140, 140)");
 		document.documentElement.style.setProperty("--login-button-color", "rgb(90, 90, 90)");
 		document.documentElement.style.setProperty("--login-button-hover-color", "rgb(110, 110, 110)");
@@ -48,9 +49,12 @@ function changeMode(mode) {
 		document.documentElement.style.setProperty("--li-color", "rgb(185,185,185)");
 		document.documentElement.style.setProperty("--card-span-bg", "rgb(42,42,42)");
 		document.documentElement.style.setProperty("--card-span-border-color", "rgb(65,65,65)");
+
+		// Login
 		document.documentElement.style.setProperty("--login-card-color", "rgb(42, 42, 42)");
 		document.documentElement.style.setProperty("--login-input-color", "rgb(62, 62, 62)");
 		document.documentElement.style.setProperty("--login-input-border-color", "rgb(80, 80, 80)");
+		document.documentElement.style.setProperty("--login-input-text-color", "rgb(255, 255, 255)");
 		document.documentElement.style.setProperty("--login-label-color", "rgb(140, 140, 140)");
 		document.documentElement.style.setProperty("--login-button-color", "rgb(255, 255, 255)");
 		document.documentElement.style.setProperty("--login-button-hover-color", "rgb(225, 225, 225)");

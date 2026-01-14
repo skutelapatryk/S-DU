@@ -34,7 +34,7 @@
                 <button class="category-button hoverable" name="pickedCategory" value="Arytmetyka">
                     <h3>Arytmetyka</h3>
                     <?php
-                        $sql = "SELECT count(*) as ilosc_pytan FROM math_arithmetic;";
+                        $sql = "SELECT count(*) as ilosc_pytan FROM collection WHERE category = 'math_arithmetic'";
                         $result = mysqli_query($connection, $sql);
                         $row = mysqli_fetch_assoc($result);
                         echo "<p>Baza pytań: " . $row["ilosc_pytan"] . "</p>";
@@ -43,7 +43,7 @@
                 <button class="category-button hoverable" name="pickedCategory" value="Płaszczyzna kartezjańska">
                     <h3>Płaszczyzna kartezjańska</h3>
                     <?php
-                        $sql = "SELECT count(*) as ilosc_pytan FROM math_cartesian_plane;";
+                        $sql = "SELECT count(*) as ilosc_pytan FROM collection WHERE category = 'math_cartesian_plane'";
                         $result = mysqli_query($connection, $sql);
                         $row = mysqli_fetch_assoc($result);
                         echo "<p>Baza pytań: " . $row["ilosc_pytan"] . "</p>";
@@ -52,7 +52,7 @@
                 <button class="category-button hoverable" name="pickedCategory" value="Trygonometria">
                     <h3>Trygonometria</h3>
                     <?php
-                        $sql = "SELECT count(*) as ilosc_pytan FROM math_trigonometry;";
+                        $sql = "SELECT count(*) as ilosc_pytan FROM collection WHERE category = 'math_trigonometry'";
                         $result = mysqli_query($connection, $sql);
                         $row = mysqli_fetch_assoc($result);
                         echo "<p>Baza pytań: " . $row["ilosc_pytan"] . "</p>";

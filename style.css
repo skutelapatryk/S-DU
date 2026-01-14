@@ -18,6 +18,7 @@
 	--login-card-color: rgb(42, 42, 42);
 	--login-input-color: rgb(62, 62, 62);
 	--login-input-border-color: rgb(80, 80, 80);
+	--login-input-text-color: rgb(255, 255, 255);
 	--login-label-color: rgb(140, 140, 140);
 	--login-button-color: rgb(255, 255, 255);
 	--login-button-hover-color: rgb(225, 225, 225);
@@ -427,6 +428,7 @@ body {
 	outline: none;
 	background: linear-gradient(var(--login-input-color)) padding-box, conic-gradient(from var(--angle), var(--login-input-border-color)) border-box;
 	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+	color: var(--login-input-text-color);
 }
 
 .input-div input:focus {
