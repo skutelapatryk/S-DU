@@ -55,7 +55,7 @@
             <a id="a-home">Quizy</a>
         </div>
         <div class="welcome-div">
-            <h1 class="gradient-text">Witaj na naszej stronie z quizami!</h1>
+            <h1 class="gradient-text">Dodaj pytanie!</h1>
         </div>
         <div class="questions-add-div">
             <form action="" method="post" enctype="multipart/form-data">

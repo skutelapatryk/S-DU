@@ -625,3 +625,7 @@ body {
 	cursor: pointer;
 	border-radius: 0.75rem;
 }
+
+.question-add-correct-answ-radio-wrapper label{
+	color: var(--h1-color);
+}

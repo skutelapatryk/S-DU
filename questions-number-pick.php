@@ -1,7 +1,12 @@
 <!DOCTYPE html>
 <?php
-    $categoryName = $_POST["categoryName"];
-    $pickedCategory = $_POST["pickedCategory"];
+    $categoryName = "";
+    $pickedCategory = "";
+    $isDifferent = "";
+
+    if (isset($_GET['category'])) {
+        $isDifferent = $_GET['category'];
+    }
 
     $categories = array(
         "Arytmetyka" => "math_arithmetic",
@@ -12,12 +17,23 @@
         "Stolice" => "geography_capitals",
         "Python" => "programming_python",
         "C++" => "programming_cpp",
-        "JavaScript" => "programming_javascript"
+        "JavaScript" => "programming_javascript",
+        "Inne" => "different"
     );
 
-    $categoryTableName = $categories[$pickedCategory];
+    if (!$isDifferent){
+        $categoryName = $_POST["categoryName"];
+        $pickedCategory = $_POST["pickedCategory"];
+        $categoryTableName = $categories[$pickedCategory];
+    } else{
+        $categoryTableName = $categories["Inne"];
+        $categoryName = "Inne";
+    }
 
     $currentMode = $_POST["currentMode"] ?? "dark";
+    if (isset($_GET['currentMode'])) {
+        $currentMode = $_GET['currentMode'];
+    }
 ?>
 
 <html lang="pl">

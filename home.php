@@ -60,6 +60,12 @@
                         <li><span class="category-card-span">Wszystkie kategorie</span></li>
                     </ul>
                 </div>
+                <div class="quiz-category-div hoverable" id="differentDiv">
+                    <h2>Inne</h2>
+                    <ul class="span-wrapper">
+                        <li><span class="category-card-span">Inne kategorie</span></li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
@@ -71,7 +77,7 @@
     </button>
     
     <?php
-        echo "<button class='add-question-button' onclick=\"redirectWithVariable('questions-add.php', 'currentMode');\">Dodaj pytanie</button>";
+        echo "<button class='add-question-button' onclick=\"redirectWithVariable('login.php', 'currentMode');\">Dodaj pytanie</button>";
     ?>
 
     <script src="script.js"></script>

@@ -53,11 +53,11 @@
 
                     if ($row["username"] == $login && $row["password"] == $password){
                         echo '<script>
-                            window.location.href = "home.php?currentMode=' . $currentMode . '"' .
+                            window.location.href = "questions-add.php?currentMode=' . $currentMode . '"' .
                         '</script>';
                     }
                     else {
-                        echo "Niepoprawny login lub hasło!";
+                        echo "<h3>Niepoprawny login lub hasło!</h3>";
                     }
                 }
             ?>
