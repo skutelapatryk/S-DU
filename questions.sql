@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 04, 2026 at 10:15 AM
+-- Generation Time: Mar 04, 2026 at 09:03 AM
 -- Wersja serwera: 10.4.32-MariaDB
 -- Wersja PHP: 8.1.25
 
@@ -133,10 +133,10 @@ INSERT INTO `collection` (`id`, `question`, `answer_A`, `answer_B`, `answer_C`, 
 (88, 'Które z poniższych słów kluczowych jest używane do obsługi wyjątków w Pythonie?', 'try i except', 'catch i throw', 'error i handle', 'catch i finally', 'A', 'programming_python'),
 (89, 'Jaki będzie wynik poniższego kodu?', '[1, 2, 3, 4, 5]', '[1, 2, 3, 4]', 'błąd', '[5, 1, 2, 3, 4]', 'C', 'programming_python'),
 (90, 'Co oznacza „decorator” w Pythonie?', 'Funkcja, która zmienia typ danych', 'Funkcja, która zmienia zachowanie innej funkcji', 'Metoda z klasy', 'Funkcja do zmiany wartości zmiennych globalnych', 'B', 'programming_python'),
-(91, 'Kto założył Kongo TV?', 'meduska', 'srebrny brek', 'Adolf', 'Denis Załęcki', 'A', 'diffrent'),
-(92, 'Kogo samochód widnieje na obrazku?', 'White 2215', 'Bedoes', 'Chivas', 'Kinny Zimmer', 'C', 'diffrent'),
-(93, 'Gdzie nie chodzi autor w rozmowie z Kazikiem?', 'do szkoły', 'do lekarza', 'do kościoła', 'do domu', 'C', 'diffrent'),
-(94, 'Co mówił Rafonix?', 'Szybciej z tą lodziarnią', 'Szybciej z tą ciężarówką', 'Szybciej człowieku', 'Pospiesz się', 'A', 'diffrent');
+(91, 'Kto założył Kongo TV?', 'meduska', 'srebrny brek', 'Adolf', 'Denis Załęcki', 'A', 'different'),
+(92, 'Kogo samochód widnieje na obrazku?', 'White 2215', 'Bedoes', 'Chivas', 'Kinny Zimmer', 'C', 'different'),
+(93, 'Gdzie nie chodzi autor w rozmowie z Kazikiem?', 'do szkoły', 'do lekarza', 'do kościoła', 'do domu', 'C', 'different'),
+(94, 'Co mówił Rafonix?', 'Szybciej z tą lodziarnią', 'Szybciej z tą ciężarówką', 'Szybciej człowieku', 'Pospiesz się', 'A', 'different');
 
 -- --------------------------------------------------------
 
